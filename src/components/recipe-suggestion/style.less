@@ -1,0 +1,95 @@
+.recipeSuggestion {
+	background-color: #E7E8E7;
+
+	.title {
+		width: 70%;
+		max-width: 700px;
+		padding: 30px;
+		margin: auto;
+		font-size: 20px;
+	}
+
+	.recipe {
+		width: 70%;
+		max-width: 700px;
+		background: white;
+		border-radius: 10px;
+		padding: 20px 30px;
+		margin: auto;
+		overflow: auto;
+
+		.name {
+			font-size: 36px;
+			float: left;
+			width: ~"calc(100% - 120px)";
+			line-height: 44px;
+		}
+
+		.savedTo {
+			float: right;
+			width: 100px;
+			text-align: right;
+			color: #8c8d8e;
+		}
+
+		.checked {
+			color: slategrey;
+		}
+
+		.unchecked {
+			color: lightgray;
+		}
+
+		.estimate {
+			width: 100%;
+			clear: both;
+		}
+
+		.recipeContents {
+			width: ~"calc(100% - 30px)";
+			padding-top: 20px;
+			padding-bottom: 20px;
+			overflow: auto;
+
+			.recipeImg {
+				width: 45%;
+				height: 400px;
+				float: left;
+				background-color: black;
+			}
+
+			.ingredients {
+				float: left;
+				padding-left: 40px;
+				word-wrap: break-word;
+				width: 55%;
+
+				.ingredientsText {
+					font-size: 24px;
+				}
+			}
+		}
+
+		a {
+			color: white;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.viewRecipe {
+			height: 50px;
+			width: 40%;
+			min-width: 165px;
+			background-color: #E60319;
+			border-radius: 5px;
+			padding: 12px;
+			text-align: center;
+			font-weight: 500;
+			margin: auto;
+		}
+	}
+
+	
+}

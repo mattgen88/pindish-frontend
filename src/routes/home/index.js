@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import cx from 'classnames';
 import 'bootstrap/dist/css/bootstrap';
 import style from './style.less'; // TODO: eventually switch to less? Need less-loader
+import MainPage from '../../components/main-page';
 
 export default class Home extends Component {
 	onLoginClick = () => {
@@ -24,13 +25,11 @@ export default class Home extends Component {
 		</div>
 	);
 
-	mainPage = () => (<div>You're Logged in!</div>)
 
 	render ({ showLogin }) {
-		console.log(this.props);
 		return ( showLogin ?
 			this.loginPage() :
-			this.mainPage()
+			<MainPage /> //TODO: show recipe, or show board chooser?
 		);
 	}
 }
