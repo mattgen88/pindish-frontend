@@ -23,10 +23,11 @@ export default class App extends Component {
 
 	render(_, { showLogin=true }) {
 		console.log(showLogin);
+		let name = 'Julia';//TODO:
 		return (
 			<div id="app">
 				{
-					//<Header />
+					!showLogin && <Header name={name} />
 				}
 				<Router onChange={this.handleRoute}>
 					<Home showLogin={showLogin} login={this.login} path="/" />
