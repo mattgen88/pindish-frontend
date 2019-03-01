@@ -1,0 +1,65 @@
+.home {
+	min-height: 100%;
+	width: 100%;
+	background-image: url("/assets/images/background.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	.overlay {
+		background-color: rgba(0, 0, 0, .5);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+
+	.homeBody {
+		padding: 56px 20px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		h1 {
+			margin-bottom: 40px;
+		}
+
+		.welcomeMessage {
+			background: white;
+			width: 300px;
+			border-radius: 5px;
+			padding: 25px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.loginButton {
+			width: 300px;
+			background-color: #E60319;
+			border: 1px solid #E60319;
+			padding: 8px;
+			padding-bottom: 4px;
+
+			.pinterestIcon {
+				background-image: url("/assets/images/pinterest-badgeRGB.svg");
+				background-repeat: no-repeat;
+				background-position: 0px 2px;
+				background-size: 20px;
+				width: 30px;
+				height: 30px;
+				float: left;
+
+				svg {
+					fill: black;
+				}
+			}
+		}
+	}
+}
+
