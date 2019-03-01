@@ -1,4 +1,4 @@
-# pindish
+# pindish [![Netlify Status](https://api.netlify.com/api/v1/badges/492c0757-912f-4574-90b9-52812cfb44df/deploy-status)](https://app.netlify.com/sites/festive-visvesvaraya-e90544/deploys)
 
 ## CLI Commands
 
