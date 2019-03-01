@@ -8,7 +8,7 @@ export default class Home extends Component {
 	  console.log('I WAS CLICKED!');
 	};
 
-	login = () => (
+	loginPage = () => (
 		<div class={style.home}>
 			<div class={style.overlay}>
 				<div class={style.homeBody}>
@@ -18,14 +18,19 @@ export default class Home extends Component {
 							Creates a shopping list based off your Pinterest pinned recipes
 						</p>
 					</div>
-					<button type="button" class={cx(style.loginButton, 'btn btn-danger')} onclick={this.onLoginClick}><i class={style.pinterestIcon} />Log in to Pinterest</button>
+					<button type="button" class={cx(style.loginButton, 'btn btn-danger')} onclick={this.props.login}><i class={style.pinterestIcon} />Log in to Pinterest</button>
 				</div>
 			</div>
 		</div>
 	);
 
+	mainPage = () => (<div>You're Logged in!</div>)
+
 	render ({ showLogin }) {
-		return ( showLogin && this.login()
+		console.log(this.props);
+		return ( showLogin ?
+			this.loginPage() :
+			this.mainPage()
 		);
 	}
 }
