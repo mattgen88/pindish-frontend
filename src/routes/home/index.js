@@ -46,7 +46,8 @@ export default class Home extends Component {
 			console.error(e);
 			//TODO: probably show error page
 			this.setState({ showLogin: true });
-		});*/
+		});
+		*/
 	}
 
 	render (_, { showLogin }) {
