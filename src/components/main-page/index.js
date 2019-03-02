@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import style from './style.less';
 import BoardChooser from '../board-chooser';
 import RecipeSuggestion from '../recipe-suggestion';
+import cx from 'classnames';
 
 export default class mainPage extends Component {
 
@@ -13,9 +14,9 @@ export default class mainPage extends Component {
 		let boardArr = [1,2,3,4,5];
 		return (
 			<div class={style.mainPage}>
-				<div class={style.suggestionHeader}>
+				<div class={style.header}>
 					<div class={style.title}>Recipe suggestion</div>
-					{/*TODO: your pins/more ideas*/}
+					<Tab active={pickBoard} text="Boards" />
 				</div>
 				{
 					pickBoard ?
@@ -25,5 +26,8 @@ export default class mainPage extends Component {
 			</div>
 		);
 	}
+}
 
+function Tab ({ active, text }) {
+	return (<div class={cx(style.tab, active && style.active)}>{text}</div>);
 }

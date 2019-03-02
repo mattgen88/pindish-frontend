@@ -58,6 +58,7 @@ class Recipe extends Component {
 						View Full Recipe
 					</div>
 				</a>
+				{/*TODO: your pins/more ideas*/}
 			</div>
 		);
 	}
