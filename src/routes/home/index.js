@@ -21,9 +21,11 @@ export default class Home extends Component {
 							Creates a shopping list based off your Pinterest pinned recipes
 						</p>
 					</div>
-					<a href="https://pindish.herokuapp.com/auth">
-						<button type="button" class={cx(style.loginButton, 'btn btn-danger')}><i class={style.pinterestIcon} />Log in to Pinterest</button>
-					</a>
+					{
+						//<a href="https://pindish.herokuapp.com/auth">
+						<button onClick={this.props.login} type="button" class={cx(style.loginButton, 'btn btn-danger')}><i class={style.pinterestIcon} />Log in to Pinterest</button>
+					//</a>
+					}
 				</div>
 			</div>
 		</div>

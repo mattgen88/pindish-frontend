@@ -23,7 +23,8 @@ export default class App extends Component {
 		this.setState({ showLogin: false });
 	}
 
-	render(_, { showLogin=false, error=false }) {
+	render(_, { showLogin, error=false }) {
+		console.log({ showLogin });
 		let name = 'Julia';//TODO:
 		return (
 			<div id="app" class={style.app}>
