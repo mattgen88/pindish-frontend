@@ -4,10 +4,6 @@ import { FaStar } from 'react-icons/fa';
 export default function RecipeSuggestion () {
 	return (
 		<div class={style.recipeSuggestion} >
-			<div class={style.suggestionHeader}>
-				<div class={style.title}>Recipe suggestion</div>
-				{/*TODO: your pins/more ideas*/}
-			</div>
 			<Recipe recipeName="Parmesan Crusted Chicken" boardName="Hot Recipes" rating={4} url="https://google.com" />
 		</div>
 	);
