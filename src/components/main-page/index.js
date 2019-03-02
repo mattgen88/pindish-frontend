@@ -10,6 +10,10 @@ export default class mainPage extends Component {
 		pickBoard: this.props.pickBoard
 	}
 
+	togglePickBoard = () => {
+		this.setState({ pickBoard: !this.state.pickBoard });
+	}
+
 	render(_, { pickBoard }) {
 		let boardArr = [1,2,3,4,5];
 		console.log('HIT MAIN PAGE');
@@ -17,7 +21,7 @@ export default class mainPage extends Component {
 			<div class={style.mainPage}>
 				<div class={style.header}>
 					<div class={style.title}>Recipe suggestion</div>
-					<Tab active={pickBoard} text="Boards" />
+					<Tab active={pickBoard} text="Boards" toggle={this.togglePickBoard} />
 				</div>
 				{
 					pickBoard ?
@@ -29,6 +33,6 @@ export default class mainPage extends Component {
 	}
 }
 
-function Tab ({ active, text }) {
-	return (<div class={cx(style.tab, active && style.active)}>{text}</div>);
+function Tab ({ active, text, toggle }) {
+	return (<div onclick={toggle} class={cx(style.tab, active && style.active)}>{text}</div>);
 }

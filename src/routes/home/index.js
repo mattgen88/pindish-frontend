@@ -43,6 +43,7 @@ export default class Home extends Component {
 			});
 			if (response.ok) {
 				this.setState({ response, showLogin: false });
+				//TODO: whether or not to show the pickBoard
 			} else this.setState({ showLogin: true });
 		}).catch(e => {
 			console.error(e);
@@ -52,7 +53,7 @@ export default class Home extends Component {
 		*/
 	}
 
-	render (_, { showLogin }) {
+	render (_, { showLogin, pickBoard }) {
 		console.log({ showLogin });
 		
 		return ( showLogin ?
