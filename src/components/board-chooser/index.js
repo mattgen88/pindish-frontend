@@ -1,16 +1,26 @@
 import { h, Component } from 'preact';
 import cx from 'classnames';
 import style from './style.less';
+import get from 'lodash-es/get';
 
 export default class BoardChooser extends Component {
 
-	boards = (userBoards) =>
-		userBoards.map(board => (<Board imgUrl pinCount={10} name={'Name of the Board'} />));
 
-	render ({ userBoards }) {
+	boards = (userBoards) =>
+		userBoards.map(board => (
+			<Board
+				imgUrl={get(board, 'image.60x60.url')}
+				pinCount={get(board, 'counts.pins')}
+				name={get(board, 'name')}
+				id={board.id}
+				selectBoard={this.props.selectBoard}
+				selectedBoards={this.props.selectedBoards}
+			/>));
+
+	render ({ boards }) {
 		return (
 			<div class={style.chooser}>
-				{this.boards(userBoards)}
+				{boards && this.boards(boards)}
 			</div>
 		);
 	}
@@ -18,18 +28,14 @@ export default class BoardChooser extends Component {
 
 class Board extends Component {
 
-	state = {
-		selected: this.props.selected
+	toggleSelect = () => {
+		this.props.selectBoard(this.props.id);
 	}
 
-	toggleSelect = () => {
-		this.setState({ selected: !this.state.selected });
-		//TODO: actually have it do something
-	}
-	render  ({ imgUrl, pinCount, name }, { selected }) {
+	render  ({ imgUrl, pinCount, name, id, selectedBoards }) {
 		return (
-			<div class={cx(style.board, selected && style.selected)} onclick={this.toggleSelect}>
-				<img class={style.boardImg} />
+			<div class={cx(style.board, selectedBoards && selectedBoards.indexOf(id) > -1 && style.selected)} onclick={this.toggleSelect}>
+				<img class={style.boardImg} src={imgUrl} />
 				<div class={style.details}>
 					<div class={style.boardName}>{name}</div>
 					<div class={style.pinCount}>{pinCount} pins</div>

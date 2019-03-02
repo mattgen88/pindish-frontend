@@ -6,12 +6,7 @@ import style from './style.less';
 function Header({ name }) {
 	return (
 		<header class={style.header}>
-			<div class={style.hamburgerMenu}>
-				<div />
-				<div />
-				<div />
-			</div>
-			<h1>Pindish</h1>
+			<img class={style.logo} src="/assets/images/Pindish_Logo.svg" />
 
 			<form class="form-inline md-form form-sm mt-0">
 				<FaSearch />

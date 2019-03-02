@@ -1,36 +1,27 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import style from './style.less';
 import BoardChooser from '../board-chooser';
 import RecipeSuggestion from '../recipe-suggestion';
 import cx from 'classnames';
 
-export default class mainPage extends Component {
-
-	state = {
-		pickBoard: this.props.pickBoard
-	}
-
-	togglePickBoard = () => {
-		this.setState({ pickBoard: !this.state.pickBoard });
-	}
-
-	render(_, { pickBoard }) {
-		let boardArr = [1,2,3,4,5];
-		console.log('HIT MAIN PAGE');
-		return (
-			<div class={style.mainPage}>
-				<div class={style.header}>
-					<div class={style.title}>Recipe suggestion</div>
-					<Tab active={pickBoard} text="Boards" toggle={this.togglePickBoard} />
-				</div>
-				{
-					pickBoard ?
-						<BoardChooser userBoards={boardArr} /> :
-						<RecipeSuggestion />
-				}
+export default function mainPage ({ boards, togglePickBoard, pickBoard, selectBoard, selectedBoards, suggestedRecipe }) {
+	return (
+		<div class={style.mainPage}>
+			<div class={style.header}>
+				<div class={style.title}>Recipe suggestion</div>
+				<Tab active={pickBoard} text="Boards" toggle={togglePickBoard} />
 			</div>
-		);
-	}
+			{
+				pickBoard ?
+					<BoardChooser
+						boards={boards}
+						selectBoard={selectBoard}
+						selectedBoards={selectedBoards}
+					/> :
+					<RecipeSuggestion suggestedRecipe={suggestedRecipe} />
+			}
+		</div>
+	);
 }
 
 function Tab ({ active, text, toggle }) {
