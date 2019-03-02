@@ -28,18 +28,20 @@ class Recipe extends Component {
 
 		return (
 			<div class={style.recipe}>
-				<div class={style.name}>{recipeName}</div>
-				<div class={style.savedTo}>Saved To {boardName}</div>
-				<div class={style.estimate}>
-					<div>{stars}</div>
-					Estimated time:
-				</div>
 				<div class={style.recipeContents}>
-					<div class={style.recipeImg}>
-						<img />
+					<div class={style.leftCol}>
+						<div class={style.recipeImg}>
+							<img />
+						</div>
+						<div class={style.stars}>
+							<div>{stars}</div>
+						</div>
 					</div>
 					<div class={style.ingredients}>
+						<div class={style.savedTo}>You saved to <span class={style.bold}>{boardName}</span></div>
+						<div class={style.name}>{recipeName}</div>
 						<div class={style.ingredientsText}>Ingredients</div>
+						Estimated time:<br />
 						lalal<br />
 						asdf<br />
 						asdfasdfasdf<br />

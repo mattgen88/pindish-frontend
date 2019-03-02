@@ -28,6 +28,7 @@ export default class App extends Component {
 		return (
 			<div id="app" class={style.app}>
 				{
+					//TODO: update showLogin properly
 					!showLogin && !error && <Header name={name} />
 				}
 				<Router onChange={this.handleRoute}>

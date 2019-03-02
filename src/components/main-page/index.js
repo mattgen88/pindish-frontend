@@ -7,11 +7,12 @@ import cx from 'classnames';
 export default class mainPage extends Component {
 
 	state = {
-		pickBoard: this.props.pickBoard || true
+		pickBoard: this.props.pickBoard
 	}
 
 	render(_, { pickBoard }) {
 		let boardArr = [1,2,3,4,5];
+		console.log('HIT MAIN PAGE');
 		return (
 			<div class={style.mainPage}>
 				<div class={style.header}>
