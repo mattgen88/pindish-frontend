@@ -52,15 +52,6 @@ class Recipe extends Component {
 						<div class={style.recipeImg}>
 							<img src={imgUrl} />
 						</div>
-						{
-
-							/*
-							<div class={style.stars}>
-								<div>{stars}</div>
-							</div>
-							*/
-						}
-						
 					</div>
 					<div class={style.ingredients}>
 						<div class={style.savedTo}>You saved to <span class={style.bold}>{boardName}</span></div>
